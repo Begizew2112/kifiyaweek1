@@ -26,3 +26,4 @@ def analyze_domains(df):
     plt.ylabel('Number of Articles')
     plt.xticks(rotation=90)
     plt.show()
+# this is all about publisher analysis
