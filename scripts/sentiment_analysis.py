@@ -1,3 +1,4 @@
+#import the neccessary libraries
 import pandas as pd
 from nltk.sentiment import SentimentIntensityAnalyzer
 
