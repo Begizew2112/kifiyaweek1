@@ -1,0 +1,11 @@
+{
+    "data_paths": {
+        "AAPL": "c:/Users/Yibabe/Desktop/kifiyaweek1/data/AAPL_historical_data.csv",
+        "AMZN": "c:/Users/Yibabe/Desktop/kifiyaweek1/data/AMZN_historical_data.csv",
+        "GOOG": "c:/Users/Yibabe/Desktop/kifiyaweek1/data/GOOG_historical_data.csv",
+        "META": "c:/Users/Yibabe/Desktop/kifiyaweek1/data/META_historical_data.csv",
+        "MSFT": "c:/Users/Yibabe/Desktop/kifiyaweek1/data/MSFT_historical_data.csv",
+        "NVDA": "c:/Users/Yibabe/Desktop/kifiyaweek1/data/NVDA_historical_data.csv",
+        "TSLA": "c:/Users/Yibabe/Desktop/kifiyaweek1/data/TSLA_historical_data.csv"
+    }
+}
