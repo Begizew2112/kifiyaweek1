@@ -1,3 +1,5 @@
 # Ignore all CSV files in the data directory
-data/*.csv
+#data/*.csv
 
+# Ignore all CSV files in the data folder and its subfolders
+data/**/*.csv

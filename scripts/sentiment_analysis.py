@@ -1,14 +1,18 @@
+# scripts/sentiment_analysis.py
 import pandas as pd
-from nltk.sentiment import SentimentIntensityAnalyzer
+from textblob import TextBlob
 
-def perform_sentiment_analysis(df):
-    # Initialize Sentiment Intensity Analyzer
-    sia = SentimentIntensityAnalyzer()
+def analyze_sentiment(df, text_column):
+    """Perform sentiment analysis on the specified text column."""
+    df['polarity'] = df[text_column].apply(lambda x: TextBlob(x).sentiment.polarity)
+    df['subjectivity'] = df[text_column].apply(lambda x: TextBlob(x).sentiment.subjectivity)
     
-    # Perform sentiment analysis
-    df['sentiment_score'] = df['headline'].apply(lambda x: sia.polarity_scores(x)['compound'])
-    df['sentiment_category'] = df['sentiment_score'].apply(lambda x: 'very_negative' if x < -1 else ('negative' if x < -0.05 else ('positive' if x > 0.05 else 'neutral')))
+    # Assign sentiment based on polarity score
+    df['sentiment'] = df['polarity'].apply(lambda x: 'positive' if x > 0 else ('negative' if x < 0 else 'neutral'))
     
-    # Save the results
-    df.to_csv('sentiment_analysis_results.csv', index=False)
     return df
+
+if __name__ == "__main__":
+    df = pd.read_csv('data/merged_data.csv')
+    df = analyze_sentiment(df, 'headline')
+    df.to_csv('data/news_with_sentiment.csv', index=False)
